@@ -46,7 +46,8 @@ const GSTtable = (props) => {
               <td></td>
             </tr>
             {data.map((item, index) => {
-              GrossTotal += item.rate * item.quantity + Saletax + ADDST;
+              GrossTotal +=
+                item.rate * item.quantity + item.rate * item.quantity * 0.17;
               Saletax =
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
               GST = item.rate * item.quantity * 0.17;
@@ -98,7 +99,7 @@ const GSTtable = (props) => {
               <td></td>
               <td></td>
               <th>Gross Total</th>
-              <td>{Saletax}</td>
+              <td>{GrossTotal}</td>
             </tr>
           </tbody>
         </Table>
