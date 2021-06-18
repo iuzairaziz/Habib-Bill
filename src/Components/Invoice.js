@@ -11,6 +11,8 @@ import {
 } from "reactstrap";
 import Challan from "../Components/Testing";
 import "./Invoice.scss";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
 import ReactToPrint from "react-to-print";
 import { useReactToPrint } from "react-to-print";
@@ -23,6 +25,7 @@ const Invoice = (props) => {
   const [quantity, setQuantity] = useState();
   const [rate, setRate] = useState();
   const [remarks, setRemarks] = useState();
+  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <div className="container">
@@ -51,6 +54,19 @@ const Invoice = (props) => {
                   <option>HassanO</option>
                   <option>Ali </option>
                 </select>
+              </Col>
+            </FormGroup>
+            <FormGroup row className="datepicker">
+              <Label for="exampleSelect" sm={2}>
+                Select Date
+              </Label>
+              <Col sm={10}>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  isClearable
+                  placeholderText="I have been cleared!"
+                />
               </Col>
             </FormGroup>
             <FormGroup row className="options">
@@ -139,6 +155,38 @@ const Invoice = (props) => {
                   </FormGroup>
                 </Col>
               </Row>
+              <Row className="extras">
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="exampleEmail">Name</Label>
+                    <Input
+                      value={name}
+                      onChange={(e) => {
+                        setName(e.target.value);
+                      }}
+                      type="text"
+                      name="email"
+                      id="exampleEmail"
+                      placeholder="Enter Quantity"
+                    />
+                  </FormGroup>
+                </Col>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="exampleEmail">Items</Label>
+                    <Input
+                      value={items}
+                      onChange={(e) => {
+                        setItems(e.target.value);
+                      }}
+                      type="text"
+                      name="email"
+                      id="exampleEmail"
+                      placeholder="Enter Quantity"
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
             </FormGroup>
             <div className="button">
               <Button
@@ -159,7 +207,12 @@ const Invoice = (props) => {
       </div>
       <div id="printMe">
         {" "}
-        <Challan data={options} remarks={remarks} name={name} />
+        <Challan
+          data={options}
+          remarks={remarks}
+          name={name}
+          startDate={startDate}
+        />
       </div>
 
       {/* <div>

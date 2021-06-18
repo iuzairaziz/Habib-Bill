@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from "reactstrap";
 import "./Testing.scss";
+import moment from "moment";
 
 const Challan = (props) => {
   var today = new Date();
@@ -11,6 +12,7 @@ const Challan = (props) => {
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
+  const startDate = moment(props.startDate).format("LL");
   return (
     <div className="container">
       <div className=" row Heading">
@@ -19,7 +21,7 @@ const Challan = (props) => {
       <div className="container">
         <div className="row subhead">
           <h5> {name} </h5>
-          <h6>Date: {dateTime}</h6>
+          <h6>Date: {startDate}</h6>
         </div>
         <div className="row remarks">
           <p>Remarks : {remarks}</p>
