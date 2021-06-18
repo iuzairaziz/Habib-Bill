@@ -38,7 +38,7 @@ const GSTtable = (props) => {
               <th>Qty</th>
               <th>Unit</th>
               <th>Rate</th>
-              <h>Total</h>
+              <th>Total</th>
             </tr>
           </thead>
           <tbody>
