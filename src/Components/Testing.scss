@@ -1,14 +1,19 @@
-.Heading{
-    text-align: center;
-    padding-bottom: 40px;
+.Heading {
+  text-align: center;
+  padding-bottom: 40px;
 }
 
-.subhead{
-    padding-bottom:  10px;
-    align-items: flex;
-    text-align: right;
+.subhead {
+  padding-bottom: 10px;
+  align-items: flex;
+  text-align: right;
 }
-.remarks{
-    padding-left: 1rem;
-    padding-bottom: 20px;
+.remarks {
+  //   padding-left: 1rem;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+.total {
+  padding-top: 10rem;
+  height: 10rem;
 }

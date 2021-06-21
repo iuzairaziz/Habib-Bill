@@ -13,19 +13,21 @@ const Challan = (props) => {
   const remarks = props.remarks;
   const name = props.name;
   const startDate = moment(props.startDate).format("LL");
+
   return (
     <div className="container">
       <div className=" row Heading">
         <h1>Challan</h1>
       </div>
       <div className="container">
-        <div className="row subhead">
-          <h5> {name} </h5>
+        <div className="row remarks">
           <h6>Date: {startDate}</h6>
         </div>
-        <div className="row remarks">
+        <div className="row subhead">
+          <h5> {name} </h5>
           <p>Remarks : {remarks}</p>
         </div>
+
         <Table>
           <thead>
             <tr>
@@ -50,12 +52,40 @@ const Challan = (props) => {
                 </tr>
               );
             })}
+            <tr className="total">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            {/* <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> */}
             <tr>
               <td></td>
               <td></td>
               <td></td>
               <th>Gross Total : </th>
-              <td>{GrossTotal}</td>
+              <th>{GrossTotal}</th>
             </tr>
           </tbody>
         </Table>

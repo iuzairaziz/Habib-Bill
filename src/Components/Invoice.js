@@ -13,9 +13,7 @@ import Challan from "../Components/Testing";
 import "./Invoice.scss";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Select from "react-select";
-import ReactToPrint from "react-to-print";
-import { useReactToPrint } from "react-to-print";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Invoice = (props) => {
   const [options, setOptions] = useState([]);
@@ -201,12 +199,26 @@ const Invoice = (props) => {
               >
                 Enter
               </Button>{" "}
+              <Link
+                to={{
+                  pathname: "/bill",
+                  BillProps: {
+                    data: options,
+                    remarks: remarks,
+                    name: name,
+                    startDate: startDate,
+                  },
+                }}
+              >
+                <Button outline color="primary">
+                  Print
+                </Button>{" "}
+              </Link>
             </div>
           </Form>
         </div>
       </div>
       <div id="printMe">
-        {" "}
         <Challan
           data={options}
           remarks={remarks}
