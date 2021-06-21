@@ -10,6 +10,10 @@ import {
   Row,
 } from "reactstrap";
 import GSTtable from "./GSTtable";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import DataTableExtensions from "react-data-table-component-extensions";
+import "react-data-table-component-extensions/dist/index.css";
 
 const GSTinvoice = (props) => {
   const [options, setOptions] = useState([]);
@@ -20,6 +24,7 @@ const GSTinvoice = (props) => {
   const [rate, setRate] = useState();
   const [remarks, setRemarks] = useState();
   const [saletax, setSaleTax] = useState();
+  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <div className="container">
@@ -31,25 +36,40 @@ const GSTinvoice = (props) => {
       <div className="row">
         <div className="col">
           <Form>
-            <FormGroup row className="customer">
-              <Label for="exampleSelect" sm={2}>
-                Select Customer
-              </Label>
-              <Col sm={10}>
-                <select
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                >
-                  <option>Uzair</option>
-                  <option>Irtaza </option>
-                  <option>Habib </option>
-                  <option>HassanO</option>
-                  <option>Ali </option>
-                </select>
-              </Col>
-            </FormGroup>
+            <div className="row">
+              <FormGroup row className="customer">
+                <Label for="exampleSelect" sm={2}>
+                  Select Customer
+                </Label>
+                <Col sm={10}>
+                  <select
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                  >
+                    <option>Uzair</option>
+                    <option>Irtaza </option>
+                    <option>Habib </option>
+                    <option>HassanO</option>
+                    <option>Ali </option>
+                  </select>
+                </Col>
+              </FormGroup>
+              <FormGroup row className="datepicker">
+                <Label for="exampleSelect" sm={2}>
+                  Select Date
+                </Label>
+                <Col sm={10}>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    isClearable
+                    placeholderText="I have been cleared!"
+                  />
+                </Col>
+              </FormGroup>
+            </div>
             <Row>
               {" "}
               <Col md={12}>
@@ -182,8 +202,18 @@ const GSTinvoice = (props) => {
         data={options}
         remarks={remarks}
         name={name}
+        startDate={startDate}
         // saletax={saletax}
       />
+      {/* <DataTableExtensions>
+        <GSTtable
+          data={options}
+          remarks={remarks}
+          name={name}
+          startDate={startDate}
+          // saletax={saletax}
+        />
+      </DataTableExtensions> */}
     </div>
   );
 };

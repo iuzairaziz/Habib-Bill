@@ -1,13 +1,14 @@
 import React from "react";
 import { Table } from "reactstrap";
 import "./GSTtable.scss";
+import moment from "moment";
 
 const GSTtable = (props) => {
   var today = new Date();
   var date =
     today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
   var dateTime = date;
-
+  let NetTotal = 0;
   let GrossTotal = 0;
   let Saletax = 0;
   let GST = 0;
@@ -17,24 +18,25 @@ const GSTtable = (props) => {
   const remarks = props.remarks;
   const name = props.name;
   const AddST = props.saletax;
+  const startDate = moment(props.startDate).format("LL");
 
   return (
     <div className="container">
       <div className=" row Heading">
-        <h1>Challan</h1>
+        <h1>Challan / Quotation </h1>
       </div>
       <div className="container">
         <div className="row subhead">
+          <h6>Date: {startDate}</h6>
           <h5>Cutomer Name: {name} </h5>
-          <h6>Date: {dateTime}</h6>
         </div>
         <div className="row remarks">
-          <p>Remarks : {remarks}</p>
+          <p>{remarks}</p>
         </div>
         <Table>
           <thead>
             <tr>
-              <th>Goods</th>
+              <th>Product</th>
               <th>Qty</th>
               <th>Unit</th>
               <th>Rate</th>
@@ -46,6 +48,7 @@ const GSTtable = (props) => {
               <td></td>
             </tr>
             {data.map((item, index) => {
+              NetTotal += item.rate * item.quantity;
               GrossTotal +=
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
               Saletax =
@@ -70,16 +73,23 @@ const GSTtable = (props) => {
               <td></td>
               <td></td>
               <td></td>
-              <th>GST</th>
-              <td>17%</td>
+              <th>Net Total</th>
+              <td>{NetTotal}</td>
             </tr>
             <tr>
               <td></td>
               <td></td>
               <td></td>
+              <th>GST</th>
+              <td>17% {GST}</td>
+            </tr>
+            {/* <tr>
+              <td></td>
+              <td></td>
+              <td></td>
               <th>Total including GST</th>
               <td>{GST.toFixed(2)}</td>
-            </tr>
+            </tr> */}
             {/* <tr>
               <td></td>
               <td></td>
