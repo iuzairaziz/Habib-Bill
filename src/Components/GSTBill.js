@@ -1,13 +1,12 @@
 import React from "react";
-import Challan from "./Testing";
-import moment from "moment";
+import GSTChallan from "./GSTtable";
 
-const Bill = (props) => {
+const GSTBill = (props) => {
   const options = props.location.BillProps;
   console.log("name", props.location.BillProps);
-  <style type="text/css">{`.navbar {display: none}`}</style>;
+
   return (
-    <Challan
+    <GSTChallan
       data={options.data}
       remarks={options.remarks}
       name={options.name}
@@ -16,4 +15,4 @@ const Bill = (props) => {
   );
 };
 
-export default Bill;
+export default GSTBill;

@@ -4,15 +4,11 @@ import "./Testing.scss";
 import moment from "moment";
 
 const Challan = (props) => {
-  var today = new Date();
-  var date =
-    today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
-  var dateTime = date;
   let GrossTotal = 0;
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
-  const startDate = moment(props.startDate).format("LL");
+  const startDate = moment(props.startDate).format("DD/MMM/YYYY");
 
   return (
     <div className="container">
@@ -25,6 +21,8 @@ const Challan = (props) => {
         </div>
         <div className="row subhead">
           <h5> {name} </h5>
+        </div>
+        <div className="row">
           <p>Remarks : {remarks}</p>
         </div>
 

@@ -4,26 +4,20 @@ import "./GSTtable.scss";
 import moment from "moment";
 
 const GSTtable = (props) => {
-  var today = new Date();
-  var date =
-    today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
-  var dateTime = date;
   let NetTotal = 0;
   let GrossTotal = 0;
   let Saletax = 0;
   let GST = 0;
-  let ADDST = 0;
-  let TaddST;
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
   const AddST = props.saletax;
-  const startDate = moment(props.startDate).format("LL");
+  const startDate = moment(props.startDate).format("DD/MMM/YYYY");
 
   return (
     <div className="container">
-      <div className=" row Heading">
-        <h1>Challan / Quotation </h1>
+      <div className="row">
+        <h1>Challan / Quotation</h1>
       </div>
       <div className="container">
         <div className="row subhead">
@@ -53,7 +47,7 @@ const GSTtable = (props) => {
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
               Saletax =
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
-              GST = item.rate * item.quantity * 0.17;
+              GST += item.rate * item.quantity * 0.17;
               // ADDST = item.saletax;
               // TaddST =
               //   item.rate * item.quantity * 0.17 +
@@ -69,6 +63,13 @@ const GSTtable = (props) => {
                 </tr>
               );
             })}
+            <tr className="total">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
             <tr>
               <td></td>
               <td></td>
@@ -80,8 +81,8 @@ const GSTtable = (props) => {
               <td></td>
               <td></td>
               <td></td>
-              <th>GST</th>
-              <td>17% {GST}</td>
+              <th>GST 17%</th>
+              <td>{GST.toFixed(2)}</td>
             </tr>
             <tr></tr>
             {/* <tr>
@@ -115,6 +116,7 @@ const GSTtable = (props) => {
           </tbody>
         </Table>
       </div>
+      <p>* Goods once sold cannot be exchanged or returned</p>
     </div>
   );
 };

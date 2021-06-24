@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   FormGroup,
   Form,
@@ -13,7 +13,10 @@ import Challan from "../Components/Testing";
 import "./Invoice.scss";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import CountryService from "../Services/CustomerService";
+import NatureService from "../Services/NatureService";
+import Select from "react-select";
 
 const Invoice = (props) => {
   const [options, setOptions] = useState([]);
@@ -24,9 +27,55 @@ const Invoice = (props) => {
   const [rate, setRate] = useState();
   const [remarks, setRemarks] = useState();
   const [startDate, setStartDate] = useState(new Date());
+  const [country, setCountry] = useState([]);
+  const [nature, setNature] = useState([]);
+
+  useEffect(() => {
+    getCountry();
+    getNature();
+  }, []);
+
+  const getCountry = () => {
+    CountryService.getAllCountry().then((res) => {
+      let options = [];
+      res.data.map((item, index) => {
+        options.push({
+          // value: item._id,
+          label: item.name,
+          value: item._id,
+        });
+        setCountry(options);
+        console.log("Customers", country);
+      });
+    });
+  };
+
+  const getNature = () => {
+    NatureService.getAllNature().then((res) => {
+      let options = [];
+      res.data.map((item, index) => {
+        options.push({ label: item.name, value: item._id });
+      });
+      setNature(options);
+      console.log("Prodcuts", nature);
+    });
+  };
 
   return (
     <div className="container">
+      <div className="row">
+        <div className="col">
+          <Link to="/gst">
+            <Button>GST Invoice</Button>
+          </Link>
+          <Link to="/add-customer">
+            <Button>Add Customer</Button>
+          </Link>
+          <Link to="/add-product">
+            <Button>Add Products</Button>
+          </Link>
+        </div>
+      </div>
       <div className="row heading">
         <div className="col">
           <h1> Invoice </h1>
@@ -40,18 +89,12 @@ const Invoice = (props) => {
                 Select Customer
               </Label>
               <Col sm={10}>
-                <select
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
+                <Select
+                  options={country}
+                  onChange={(name) => {
+                    setName(name.label);
                   }}
-                >
-                  <option>Uzair</option>
-                  <option>Irtaza </option>
-                  <option>Habib </option>
-                  <option>HassanO</option>
-                  <option>Ali </option>
-                </select>
+                />
               </Col>
             </FormGroup>
             <FormGroup row className="datepicker">
@@ -73,7 +116,13 @@ const Invoice = (props) => {
                   Items
                 </Label>
                 <Col sm={11}>
-                  <select
+                  <Select
+                    options={nature}
+                    onChange={(name) => {
+                      setItems(name.label);
+                    }}
+                  />
+                  {/* <select
                     value={items}
                     onChange={(e) => {
                       setItems(e.target.value);
@@ -82,7 +131,7 @@ const Invoice = (props) => {
                     <option>Auramine O</option>
                     <option>Direct Red </option>
                     <option>Guar Gum </option>
-                  </select>
+                  </select> */}
                 </Col>
               </Col>
               <Col>
@@ -127,7 +176,7 @@ const Invoice = (props) => {
                       onChange={(e) => {
                         setRate(e.target.value);
                       }}
-                      type="text"
+                      type="number"
                       name="password"
                       id="examplePassword"
                       placeholder="Rate "
@@ -149,38 +198,6 @@ const Invoice = (props) => {
                       name="password"
                       id="examplePassword"
                       placeholder="Remarks "
-                    />
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row className="extras">
-                <Col md={6}>
-                  <FormGroup>
-                    <Label for="exampleEmail">Name</Label>
-                    <Input
-                      value={name}
-                      onChange={(e) => {
-                        setName(e.target.value);
-                      }}
-                      type="text"
-                      name="email"
-                      id="exampleEmail"
-                      placeholder="Enter Quantity"
-                    />
-                  </FormGroup>
-                </Col>
-                <Col md={6}>
-                  <FormGroup>
-                    <Label for="exampleEmail">Items</Label>
-                    <Input
-                      value={items}
-                      onChange={(e) => {
-                        setItems(e.target.value);
-                      }}
-                      type="text"
-                      name="email"
-                      id="exampleEmail"
-                      placeholder="Enter Quantity"
                     />
                   </FormGroup>
                 </Col>
@@ -226,28 +243,15 @@ const Invoice = (props) => {
           startDate={startDate}
         />
       </div>
-
-      {/* <div>
-        <Challan
-          ref={componentRef}
-          data={options}
-          remarks={remarks}
-          name={name}
-        />
-        <button onClick={handlePrint}>Print this out!</button>
-      </div> */}
-      {/* <div>
-        <ReactToPrint
-          onPrintError={(err) => console.log(err)}
-          trigger={() => <button>Print this out!</button>}
-          content={() => componentRef.current}
-        />
-        <Challan
-          ref={componentRef}
-          data={options}
-          remarks={remarks}
-          name={name}
-        />
+      {/* <div className="col">
+        <div className="form-group">
+          <label className="control-label">Country</label>
+          <Select
+            value={country}
+            onChange={(val) => props.setFieldValue("country", val)}
+            options={country}
+          />
+        </div>
       </div> */}
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormGroup,
   Form,
@@ -12,8 +12,11 @@ import {
 import GSTtable from "./GSTtable";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import DataTableExtensions from "react-data-table-component-extensions";
 import "react-data-table-component-extensions/dist/index.css";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import CountryService from "../Services/CustomerService";
+import NatureService from "../Services/NatureService";
+import Select from "react-select";
 
 const GSTinvoice = (props) => {
   const [options, setOptions] = useState([]);
@@ -25,9 +28,55 @@ const GSTinvoice = (props) => {
   const [remarks, setRemarks] = useState();
   const [saletax, setSaleTax] = useState();
   const [startDate, setStartDate] = useState(new Date());
+  const [country, setCountry] = useState([]);
+  const [nature, setNature] = useState([]);
+
+  useEffect(() => {
+    getCountry();
+    getNature();
+  }, []);
+
+  const getCountry = () => {
+    CountryService.getAllCountry().then((res) => {
+      let options = [];
+      res.data.map((item, index) => {
+        options.push({
+          // value: item._id,
+          label: item.name,
+          value: item._id,
+        });
+        setCountry(options);
+        console.log("Customers", country);
+      });
+    });
+  };
+
+  const getNature = () => {
+    NatureService.getAllNature().then((res) => {
+      let options = [];
+      res.data.map((item, index) => {
+        options.push({ label: item.name, value: item._id });
+      });
+      setNature(options);
+      console.log("Prodcuts", nature);
+    });
+  };
 
   return (
     <div className="container">
+      <div className="row">
+        <div className="col">
+          <Link to="/">
+            <Button>Invoice</Button>
+          </Link>
+          <Link to="/add-customer">
+            <Button>Add Customer</Button>
+          </Link>
+          <Link to="/add-product">
+            <Button>Add Products</Button>
+          </Link>
+        </div>
+      </div>
       <div className="row">
         <div className="col">
           <h1>GST Invoice</h1>
@@ -42,18 +91,12 @@ const GSTinvoice = (props) => {
                   Select Customer
                 </Label>
                 <Col sm={10}>
-                  <select
-                    value={name}
-                    onChange={(e) => {
-                      setName(e.target.value);
+                  <Select
+                    options={country}
+                    onChange={(name) => {
+                      setName(name.label);
                     }}
-                  >
-                    <option>Uzair</option>
-                    <option>Irtaza </option>
-                    <option>Habib </option>
-                    <option>HassanO</option>
-                    <option>Ali </option>
-                  </select>
+                  />
                 </Col>
               </FormGroup>
               <FormGroup row className="datepicker">
@@ -95,16 +138,12 @@ const GSTinvoice = (props) => {
                   Items
                 </Label>
                 <Col sm={11}>
-                  <select
-                    value={items}
-                    onChange={(e) => {
-                      setItems(e.target.value);
+                  <Select
+                    options={nature}
+                    onChange={(name) => {
+                      setItems(name.label);
                     }}
-                  >
-                    <option>Auramine O</option>
-                    <option>Direct Red </option>
-                    <option>Guar Gum </option>
-                  </select>
+                  />
                 </Col>
               </Col>
               <Col>
@@ -134,7 +173,7 @@ const GSTinvoice = (props) => {
                       onChange={(e) => {
                         setQuantity(e.target.value);
                       }}
-                      type="text"
+                      type="number"
                       name="email"
                       id="exampleEmail"
                       placeholder="Enter Quantity"
@@ -149,7 +188,7 @@ const GSTinvoice = (props) => {
                       onChange={(e) => {
                         setRate(e.target.value);
                       }}
-                      type="text"
+                      type="number"
                       name="password"
                       id="examplePassword"
                       placeholder="Rate "
@@ -194,6 +233,21 @@ const GSTinvoice = (props) => {
               >
                 Enter
               </Button>{" "}
+              <Link
+                to={{
+                  pathname: "/gst-bill",
+                  BillProps: {
+                    data: options,
+                    remarks: remarks,
+                    name: name,
+                    startDate: startDate,
+                  },
+                }}
+              >
+                <Button outline color="primary">
+                  Print
+                </Button>{" "}
+              </Link>
             </div>
           </Form>
         </div>
