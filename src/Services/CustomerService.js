@@ -21,6 +21,7 @@ class CountryService {
   getAllCountry() {
     return axios({
       method: "get",
+      crossdomain: true,
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       url: this.config.apiBaseUrl + "country/show-country",
     });
