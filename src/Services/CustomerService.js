@@ -23,7 +23,8 @@ class CountryService {
       method: "get",
       crossdomain: true,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
+        Accept: "application/json",
         "Access-Control-Allow-Orgin": "*",
       },
       url: this.config.apiBaseUrl + "country/show-country",
