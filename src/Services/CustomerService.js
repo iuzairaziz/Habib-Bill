@@ -22,7 +22,10 @@ class CountryService {
     return axios({
       method: "get",
       crossdomain: true,
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Orgin": "*",
+      },
       url: this.config.apiBaseUrl + "country/show-country",
     });
   }
