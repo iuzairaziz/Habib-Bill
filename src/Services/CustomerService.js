@@ -19,7 +19,11 @@ class CountryService {
   }
 
   getAllCountry() {
-    return axios.get(this.config.apiBaseUrl + "country/show-country");
+    return axios({
+      method: "get",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      url: this.config.apiBaseUrl + "country/show-country",
+    });
   }
 
   updateCountry(id, formData) {
