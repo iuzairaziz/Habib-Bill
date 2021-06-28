@@ -20,7 +20,7 @@ class CountryService {
 
   getAllCountry() {
     return axios({
-      method: "get",
+      method: "GET",
       crossdomain: true,
       headers: {
         "Content-Type": "application/json",
