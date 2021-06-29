@@ -17,7 +17,7 @@ const GSTtable = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <h1>Challan / Quotation</h1>
+        <h1>CHALLAN / QUOTATION</h1>
       </div>
       <div className="container">
         <div className="row subhead">
@@ -34,7 +34,9 @@ const GSTtable = (props) => {
               <th>Qty</th>
               <th>Unit</th>
               <th>Rate</th>
-              <th>Total</th>
+              <th>Value Without GST</th>
+              <th>GST 17%</th>
+              <th>Value With GST</th>
             </tr>
           </thead>
           <tbody>
@@ -60,6 +62,11 @@ const GSTtable = (props) => {
                   <td>{item.unit}</td>
                   <td>{item.rate}</td>
                   <td>{item.rate * item.quantity}</td>
+                  <td>{(item.rate * item.quantity * 0.17).toFixed(2)}</td>
+                  <td>
+                    {item.rate * item.quantity +
+                      item.rate * item.quantity * 0.17}
+                  </td>
                 </tr>
               );
             })}
@@ -70,7 +77,7 @@ const GSTtable = (props) => {
               <td></td>
               <td></td>
             </tr>
-            <tr>
+            {/* <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -83,7 +90,7 @@ const GSTtable = (props) => {
               <td></td>
               <th>GST 17%</th>
               <td>{GST.toFixed(2)}</td>
-            </tr>
+            </tr> */}
             <tr></tr>
             {/* <tr>
               <td></td>
@@ -107,6 +114,8 @@ const GSTtable = (props) => {
               <td>{TaddST}</td>
             </tr> */}
             <tr>
+              <td></td>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>

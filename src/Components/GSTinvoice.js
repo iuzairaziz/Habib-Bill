@@ -157,6 +157,7 @@ const GSTinvoice = (props) => {
                       setUnit(e.target.value);
                     }}
                   >
+                    <option>none</option>
                     <option>KG</option>
                     <option>BAG </option>
                     <option>DRUM </option>

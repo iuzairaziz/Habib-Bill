@@ -8,7 +8,7 @@ const Challan = (props) => {
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
-  const startDate = moment(props.startDate).format("DD/MMM/YYYY");
+  const startDate = moment(props.startDate).format("DD-MMM-YYYY");
 
   return (
     <div className="container">
@@ -20,8 +20,9 @@ const Challan = (props) => {
           <h6>Date: {startDate}</h6>
         </div>
         <div className="row subhead">
-          <h5> {name} </h5>
+          <h5> M/S: {name} </h5>
         </div>
+
         <div className="row">
           <p>Remarks : {remarks}</p>
         </div>
@@ -31,7 +32,7 @@ const Challan = (props) => {
             <tr>
               <th>Qty</th>
               <th>Unit</th>
-              <th>Goods</th>
+              <th>Items</th>
               <th>Rate</th>
               <th>Total</th>
               {/* <th>Gross Total</th> */}

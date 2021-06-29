@@ -122,16 +122,6 @@ const Invoice = (props) => {
                       setItems(name.label);
                     }}
                   />
-                  {/* <select
-                    value={items}
-                    onChange={(e) => {
-                      setItems(e.target.value);
-                    }}
-                  >
-                    <option>Auramine O</option>
-                    <option>Direct Red </option>
-                    <option>Guar Gum </option>
-                  </select> */}
                 </Col>
               </Col>
               <Col>
@@ -145,6 +135,7 @@ const Invoice = (props) => {
                       setUnit(e.target.value);
                     }}
                   >
+                    <option>none</option>
                     <option>KG</option>
                     <option>BAG </option>
                     <option>DRUM </option>
