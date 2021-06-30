@@ -19,8 +19,11 @@ const Challan = (props) => {
         <div className="row remarks">
           <h6>Date: {startDate}</h6>
         </div>
-        <div className="row subhead">
+        {/* <div className="row subhead">
           <h5> M/S: {name} </h5>
+        </div> */}
+        <div className="row">
+          <h5>M/S: {name}</h5>
         </div>
 
         <div className="row">
