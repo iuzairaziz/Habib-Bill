@@ -16,7 +16,7 @@ const Challan = (props) => {
         <h1>Challan</h1>
       </div>
       <div className="container">
-        <div className="row remarks">
+        <div className="row">
           <h6>Date: {startDate}</h6>
         </div>
         {/* <div className="row subhead">
