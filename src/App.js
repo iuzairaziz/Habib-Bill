@@ -22,21 +22,6 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <ul className="navbar-nav mr-auto">
-            <li>
-              <Link to={"/"} className="nav-link">
-                {" "}
-                Invoice{" "}
-              </Link>
-            </li>
-            <li>
-              <Link to={"/gst"} className="nav-link">
-                GST Invoice
-              </Link>
-            </li>
-          </ul>
-        </nav> */}
         <hr />
         <Switch>
           <Route exact path="/" component={Invoice} />

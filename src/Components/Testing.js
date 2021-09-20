@@ -19,9 +19,6 @@ const Challan = (props) => {
         <div className="row">
           <h6>Date: {startDate}</h6>
         </div>
-        {/* <div className="row subhead">
-          <h5> M/S: {name} </h5>
-        </div> */}
         <div className="row">
           <h5>M/S: {name}</h5>
         </div>
@@ -38,7 +35,6 @@ const Challan = (props) => {
               <th>Items</th>
               <th>Rate</th>
               <th>Total</th>
-              {/* <th>Gross Total</th> */}
             </tr>
           </thead>
           <tbody>
@@ -61,27 +57,6 @@ const Challan = (props) => {
               <td></td>
               <td></td>
             </tr>
-            {/* <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr> */}
             <tr>
               <td></td>
               <td></td>
