@@ -9,6 +9,10 @@ const Challan = (props) => {
   const remarks = props.remarks;
   const name = props.name;
   const startDate = moment(props.startDate).format("DD-MMM-YYYY");
+  const remainingBalance = props.remainingBalance;
+  const totalBalance = props.totalBalance;
+  const remainingBalanceAmount = props.remainingBalanceAmount;
+  const totalBalanceAmount = props.totalBalanceAmount;
 
   return (
     <div className="container">
@@ -64,8 +68,42 @@ const Challan = (props) => {
               <th>Gross Total : </th>
               <th>{GrossTotal}</th>
             </tr>
+
+            {/* <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <th>{remainingBalance} </th>
+              <th>{totalBalance}</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <th>{remainingBalanceAmount} </th>
+              <th>{totalBalanceAmount}</th>
+            </tr> */}
           </tbody>
         </Table>
+        <br />
+        <div className="row">
+          <div className="col-8"></div>
+          <div className="col-2">
+            <h5>{remainingBalance}</h5>
+          </div>
+          <div className="col-2">
+            <h5>{remainingBalanceAmount}</h5>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-8"></div>
+          <div className="col-2">
+            <h5>{totalBalance}</h5>
+          </div>
+          <div className="col-2">
+            <h5>{totalBalanceAmount}</h5>
+          </div>
+        </div>
       </div>
     </div>
   );

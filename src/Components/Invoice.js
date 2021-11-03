@@ -26,6 +26,10 @@ const Invoice = (props) => {
   const [quantity, setQuantity] = useState();
   const [rate, setRate] = useState();
   const [remarks, setRemarks] = useState();
+  const [totalBalance, setTotalBalance] = useState();
+  const [remainingBalance, setRemainingBalance] = useState();
+  const [totalBalanceAmount, setTotalBalanceAmount] = useState();
+  const [remainingBalanceAmount, setRemainingBalanceAmount] = useState();
   const [startDate, setStartDate] = useState(new Date());
   const [country, setCountry] = useState([]);
   const [nature, setNature] = useState([]);
@@ -193,6 +197,72 @@ const Invoice = (props) => {
                   </FormGroup>
                 </Col>
               </Row>
+              <Row>
+                {" "}
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="examplePassword">Current Balance</Label>
+                    <Input
+                      value={totalBalance}
+                      onChange={(e) => {
+                        setTotalBalance(e.target.value);
+                      }}
+                      type="text"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Remarks "
+                    />
+                  </FormGroup>
+                </Col>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="examplePassword">Amount</Label>
+                    <Input
+                      value={totalBalanceAmount}
+                      onChange={(e) => {
+                        setTotalBalanceAmount(e.target.value);
+                      }}
+                      type="text"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Remarks "
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row>
+                {" "}
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="examplePassword">Remaining Balance</Label>
+                    <Input
+                      value={remainingBalance}
+                      onChange={(e) => {
+                        setRemainingBalance(e.target.value);
+                      }}
+                      type="text"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Remarks "
+                    />
+                  </FormGroup>
+                </Col>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="examplePassword">Amount</Label>
+                    <Input
+                      value={remainingBalanceAmount}
+                      onChange={(e) => {
+                        setRemainingBalanceAmount(e.target.value);
+                      }}
+                      type="text"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Remarks "
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
             </FormGroup>
             <div className="button">
               <Button
@@ -215,6 +285,10 @@ const Invoice = (props) => {
                     remarks: remarks,
                     name: name,
                     startDate: startDate,
+                    remainingBalance: remainingBalance,
+                    totalBalance: totalBalance,
+                    remainingBalanceAmount: remainingBalanceAmount,
+                    totalBalanceAmount: totalBalanceAmount,
                   },
                 }}
               >
@@ -232,6 +306,10 @@ const Invoice = (props) => {
           remarks={remarks}
           name={name}
           startDate={startDate}
+          remainingBalance={remainingBalance}
+          totalBalance={totalBalance}
+          remainingBalanceAmount={remainingBalanceAmount}
+          totalBalanceAmount={totalBalanceAmount}
         />
       </div>
       {/* <div className="col">
