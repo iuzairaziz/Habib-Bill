@@ -30,9 +30,9 @@ const GSTinvoice = (props) => {
   const [startDate, setStartDate] = useState(new Date());
   const [country, setCountry] = useState([]);
   const [nature, setNature] = useState([]);
-  const [totalBalance, setTotalBalance] = useState();
+  // const [totalBalance, setTotalBalance] = useState();
   const [remainingBalance, setRemainingBalance] = useState();
-  const [totalBalanceAmount, setTotalBalanceAmount] = useState();
+  // const [totalBalanceAmount, setTotalBalanceAmount] = useState();
   const [remainingBalanceAmount, setRemainingBalanceAmount] = useState();
 
   useEffect(() => {
@@ -201,7 +201,7 @@ const GSTinvoice = (props) => {
                   </FormGroup>
                 </Col>
               </Row>
-              <Row className="customer">
+              {/* <Row className="customer">
                 {" "}
                 <Col md={6}>
                   <FormGroup>
@@ -233,7 +233,7 @@ const GSTinvoice = (props) => {
                     />
                   </FormGroup>
                 </Col>
-              </Row>
+              </Row> */}
               <Row className="customer">
                 {" "}
                 <Col md={6}>
@@ -247,7 +247,7 @@ const GSTinvoice = (props) => {
                       type="text"
                       name="password"
                       id="examplePassword"
-                      placeholder="Remaing Balance Amount "
+                      placeholder="Remaing Balance"
                     />
                   </FormGroup>
                 </Col>
@@ -290,9 +290,9 @@ const GSTinvoice = (props) => {
                     name: name,
                     startDate: startDate,
                     remainingBalance: remainingBalance,
-                    totalBalance: totalBalance,
+                    // totalBalance: totalBalance,
                     remainingBalanceAmount: remainingBalanceAmount,
-                    totalBalanceAmount: totalBalanceAmount,
+                    // totalBalanceAmount: totalBalanceAmount,
                   },
                 }}
               >
@@ -310,9 +310,9 @@ const GSTinvoice = (props) => {
         name={name}
         startDate={startDate}
         remainingBalance={remainingBalance}
-        totalBalance={totalBalance}
+        // totalBalance={totalBalance}
         remainingBalanceAmount={remainingBalanceAmount}
-        totalBalanceAmount={totalBalanceAmount}
+        // totalBalanceAmount={totalBalanceAmount}
         // saletax={saletax}
       />
       {/* <DataTableExtensions>

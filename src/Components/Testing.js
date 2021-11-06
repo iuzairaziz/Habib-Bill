@@ -5,14 +5,16 @@ import moment from "moment";
 
 const Challan = (props) => {
   let GrossTotal = 0;
+
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
   const startDate = moment(props.startDate).format("DD-MMM-YYYY");
   const remainingBalance = props.remainingBalance;
-  const totalBalance = props.totalBalance;
+  // const totalBalance = props.totalBalance;
   const remainingBalanceAmount = props.remainingBalanceAmount;
-  const totalBalanceAmount = props.totalBalanceAmount;
+  // const totalBalanceAmount = props.totalBalanceAmount;
+  let AllBalance = remainingBalanceAmount;
 
   return (
     <div className="container">
@@ -43,6 +45,7 @@ const Challan = (props) => {
           </thead>
           <tbody>
             {data.map((item, index) => {
+              console.log("dttaa", data);
               GrossTotal += item.rate * item.quantity;
               return (
                 <tr>
@@ -82,8 +85,8 @@ const Challan = (props) => {
                   <td></td>
                   <td></td>
 
-                  <th>{totalBalance}</th>
-                  <th>{totalBalanceAmount}</th>
+                  <th>Total Balance</th>
+                  <th>{Number(AllBalance) + Number(GrossTotal)}</th>
                 </tr>
               </>
             ) : null}

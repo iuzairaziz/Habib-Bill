@@ -26,9 +26,9 @@ const Invoice = (props) => {
   const [quantity, setQuantity] = useState();
   const [rate, setRate] = useState();
   const [remarks, setRemarks] = useState();
-  const [totalBalance, setTotalBalance] = useState();
+  // const [totalBalance, setTotalBalance] = useState();
   const [remainingBalance, setRemainingBalance] = useState();
-  const [totalBalanceAmount, setTotalBalanceAmount] = useState();
+  // const [totalBalanceAmount, setTotalBalanceAmount] = useState();
   const [remainingBalanceAmount, setRemainingBalanceAmount] = useState();
   const [startDate, setStartDate] = useState(new Date());
   const [country, setCountry] = useState([]);
@@ -197,7 +197,7 @@ const Invoice = (props) => {
                   </FormGroup>
                 </Col>
               </Row>
-              <Row className="customer">
+              {/* <Row className="customer">
                 {" "}
                 <Col md={6}>
                   <FormGroup>
@@ -229,7 +229,7 @@ const Invoice = (props) => {
                     />
                   </FormGroup>
                 </Col>
-              </Row>
+              </Row> */}
               <Row className="customer">
                 {" "}
                 <Col md={6}>
@@ -271,7 +271,7 @@ const Invoice = (props) => {
                 onClick={() => {
                   setOptions((prevVal) => [
                     ...prevVal,
-                    { quantity, rate, unit, items },
+                    { quantity, rate, unit, items, remainingBalanceAmount },
                   ]);
                 }}
               >
@@ -286,9 +286,9 @@ const Invoice = (props) => {
                     name: name,
                     startDate: startDate,
                     remainingBalance: remainingBalance,
-                    totalBalance: totalBalance,
+                    // totalBalance: totalBalance,
                     remainingBalanceAmount: remainingBalanceAmount,
-                    totalBalanceAmount: totalBalanceAmount,
+                    // totalBalanceAmount: totalBalanceAmount,
                   },
                 }}
               >
@@ -307,9 +307,9 @@ const Invoice = (props) => {
           name={name}
           startDate={startDate}
           remainingBalance={remainingBalance}
-          totalBalance={totalBalance}
+          // totalBalance={totalBalance}
           remainingBalanceAmount={remainingBalanceAmount}
-          totalBalanceAmount={totalBalanceAmount}
+          // totalBalanceAmount={totalBalanceAmount}
         />
       </div>
     </div>

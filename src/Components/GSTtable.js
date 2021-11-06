@@ -14,9 +14,9 @@ const GSTtable = (props) => {
   const AddST = props.saletax;
   const startDate = moment(props.startDate).format("DD/MMM/YYYY");
   const remainingBalance = props.remainingBalance;
-  const totalBalance = props.totalBalance;
+  // const totalBalance = props.totalBalance;
   const remainingBalanceAmount = props.remainingBalanceAmount;
-  const totalBalanceAmount = props.totalBalanceAmount;
+  // const totalBalanceAmount = props.totalBalanceAmount;
 
   return (
     <div className="container">
@@ -121,8 +121,8 @@ const GSTtable = (props) => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <th>{totalBalance}</th>
-                  <th>{totalBalanceAmount}</th>
+                  <th>Current Balance </th>
+                  <th>{Number(GrossTotal) + Number(remainingBalanceAmount)}</th>
                 </tr>
               </>
             ) : null}

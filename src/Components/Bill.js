@@ -12,9 +12,9 @@ const Bill = (props) => {
       name={options.name}
       startDate={options.startDate}
       remainingBalance={options.remainingBalance}
-      totalBalance={options.totalBalance}
+      // totalBalance={options.totalBalance}
       remainingBalanceAmount={options.remainingBalanceAmount}
-      totalBalanceAmount={options.totalBalanceAmount}
+      // totalBalanceAmount={options.totalBalanceAmount}
     />
   );
 };
