@@ -30,6 +30,10 @@ const GSTinvoice = (props) => {
   const [startDate, setStartDate] = useState(new Date());
   const [country, setCountry] = useState([]);
   const [nature, setNature] = useState([]);
+  const [totalBalance, setTotalBalance] = useState();
+  const [remainingBalance, setRemainingBalance] = useState();
+  const [totalBalanceAmount, setTotalBalanceAmount] = useState();
+  const [remainingBalanceAmount, setRemainingBalanceAmount] = useState();
 
   useEffect(() => {
     getCountry();
@@ -165,7 +169,7 @@ const GSTinvoice = (props) => {
                   </select>
                 </Col>
               </Col>
-              <Row className="enteries">
+              <Row className="customer">
                 <Col md={6}>
                   <FormGroup>
                     <Label for="exampleEmail">Quantity</Label>
@@ -197,28 +201,71 @@ const GSTinvoice = (props) => {
                   </FormGroup>
                 </Col>
               </Row>
-              <Row className="enteries">
-                {/* <Col md={6}>
-          <FormGroup>
-            <Label for="exampleEmail">Sale Tax</Label>
-            <Input type="text" name="email" id="exampleEmail" placeholder="Enter Sale Tax" />
-          </FormGroup>
-        </Col> */}
-                {/* <Col md={6}>
+              <Row className="customer">
+                {" "}
+                <Col md={6}>
                   <FormGroup>
-                    <Label for="examplePassword">ADD S.T</Label>
+                    <Label for="examplePassword">Current Balance</Label>
                     <Input
-                      value={saletax}
+                      value={totalBalance}
                       onChange={(e) => {
-                        setSaleTax(e.target.value);
+                        setTotalBalance(e.target.value);
                       }}
                       type="text"
                       name="password"
                       id="examplePassword"
-                      placeholder="ADD S.T "
+                      placeholder="Total Balance"
                     />
                   </FormGroup>
-                </Col> */}
+                </Col>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="examplePassword">Amount</Label>
+                    <Input
+                      value={totalBalanceAmount}
+                      onChange={(e) => {
+                        setTotalBalanceAmount(e.target.value);
+                      }}
+                      type="text"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Total Balance Amount "
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row className="customer">
+                {" "}
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="examplePassword">Remaining Balance</Label>
+                    <Input
+                      value={remainingBalance}
+                      onChange={(e) => {
+                        setRemainingBalance(e.target.value);
+                      }}
+                      type="text"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Remaing Balance Amount "
+                    />
+                  </FormGroup>
+                </Col>
+                <Col md={6}>
+                  <FormGroup>
+                    <Label for="examplePassword">Amount</Label>
+                    <Input
+                      value={remainingBalanceAmount}
+                      onChange={(e) => {
+                        setRemainingBalanceAmount(e.target.value);
+                      }}
+                      type="text"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Remaing Balance Amount "
+                    />
+                  </FormGroup>
+                </Col>
               </Row>
             </FormGroup>
             <div className="button">
@@ -242,6 +289,10 @@ const GSTinvoice = (props) => {
                     remarks: remarks,
                     name: name,
                     startDate: startDate,
+                    remainingBalance: remainingBalance,
+                    totalBalance: totalBalance,
+                    remainingBalanceAmount: remainingBalanceAmount,
+                    totalBalanceAmount: totalBalanceAmount,
                   },
                 }}
               >
@@ -258,6 +309,10 @@ const GSTinvoice = (props) => {
         remarks={remarks}
         name={name}
         startDate={startDate}
+        remainingBalance={remainingBalance}
+        totalBalance={totalBalance}
+        remainingBalanceAmount={remainingBalanceAmount}
+        totalBalanceAmount={totalBalanceAmount}
         // saletax={saletax}
       />
       {/* <DataTableExtensions>

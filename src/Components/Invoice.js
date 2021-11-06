@@ -179,7 +179,7 @@ const Invoice = (props) => {
                   </FormGroup>
                 </Col>
               </Row>
-              <Row>
+              <Row className="customer">
                 {" "}
                 <Col md={12}>
                   <FormGroup>
@@ -197,7 +197,7 @@ const Invoice = (props) => {
                   </FormGroup>
                 </Col>
               </Row>
-              <Row>
+              <Row className="customer">
                 {" "}
                 <Col md={6}>
                   <FormGroup>
@@ -210,7 +210,7 @@ const Invoice = (props) => {
                       type="text"
                       name="password"
                       id="examplePassword"
-                      placeholder="Remarks "
+                      placeholder="Total Balance "
                     />
                   </FormGroup>
                 </Col>
@@ -225,12 +225,12 @@ const Invoice = (props) => {
                       type="text"
                       name="password"
                       id="examplePassword"
-                      placeholder="Remarks "
+                      placeholder="Total Balance Amount"
                     />
                   </FormGroup>
                 </Col>
               </Row>
-              <Row>
+              <Row className="customer">
                 {" "}
                 <Col md={6}>
                   <FormGroup>
@@ -243,7 +243,7 @@ const Invoice = (props) => {
                       type="text"
                       name="password"
                       id="examplePassword"
-                      placeholder="Remarks "
+                      placeholder="Remaing Balance "
                     />
                   </FormGroup>
                 </Col>
@@ -258,7 +258,7 @@ const Invoice = (props) => {
                       type="text"
                       name="password"
                       id="examplePassword"
-                      placeholder="Remarks "
+                      placeholder="Remaing Balance Amount "
                     />
                   </FormGroup>
                 </Col>
@@ -312,16 +312,6 @@ const Invoice = (props) => {
           totalBalanceAmount={totalBalanceAmount}
         />
       </div>
-      {/* <div className="col">
-        <div className="form-group">
-          <label className="control-label">Country</label>
-          <Select
-            value={country}
-            onChange={(val) => props.setFieldValue("country", val)}
-            options={country}
-          />
-        </div>
-      </div> */}
     </div>
   );
 };

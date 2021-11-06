@@ -28,7 +28,7 @@ const Challan = (props) => {
         </div>
 
         <div className="row">
-          <p>Remarks : {remarks}</p>
+          <p>{remarks}</p>
         </div>
 
         <Table>
@@ -65,45 +65,30 @@ const Challan = (props) => {
               <td></td>
               <td></td>
               <td></td>
-              <th>Gross Total : </th>
+              <th>Bill Amount: </th>
               <th>{GrossTotal}</th>
             </tr>
+            {remainingBalance ? (
+              <>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <th>{remainingBalance} </th>
+                  <th>{remainingBalanceAmount} </th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
 
-            {/* <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <th>{remainingBalance} </th>
-              <th>{totalBalance}</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <th>{remainingBalanceAmount} </th>
-              <th>{totalBalanceAmount}</th>
-            </tr> */}
+                  <th>{totalBalance}</th>
+                  <th>{totalBalanceAmount}</th>
+                </tr>
+              </>
+            ) : null}
           </tbody>
         </Table>
-        <br />
-        <div className="row">
-          <div className="col-8"></div>
-          <div className="col-2">
-            <h5>{remainingBalance}</h5>
-          </div>
-          <div className="col-2">
-            <h5>{remainingBalanceAmount}</h5>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-8"></div>
-          <div className="col-2">
-            <h5>{totalBalance}</h5>
-          </div>
-          <div className="col-2">
-            <h5>{totalBalanceAmount}</h5>
-          </div>
-        </div>
       </div>
     </div>
   );
