@@ -236,7 +236,7 @@ const GSTinvoice = (props) => {
               </Row> */}
               <Row className="customer">
                 {" "}
-                <Col md={6}>
+                {/* <Col md={6}>
                   <FormGroup>
                     <Label for="examplePassword">Remaining Balance</Label>
                     <Input
@@ -250,7 +250,7 @@ const GSTinvoice = (props) => {
                       placeholder="Remaing Balance"
                     />
                   </FormGroup>
-                </Col>
+                </Col> */}
                 <Col md={6}>
                   <FormGroup>
                     <Label for="examplePassword">Amount</Label>

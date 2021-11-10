@@ -71,13 +71,13 @@ const Challan = (props) => {
               <th>Bill Amount: </th>
               <th>{GrossTotal}</th>
             </tr>
-            {remainingBalance ? (
+            {remainingBalanceAmount ? (
               <>
                 <tr>
                   <td></td>
                   <td></td>
                   <td></td>
-                  <th>{remainingBalance} </th>
+                  <th>Previous Balance </th>
                   <th>{remainingBalanceAmount} </th>
                 </tr>
                 <tr>
@@ -92,6 +92,9 @@ const Challan = (props) => {
             ) : null}
           </tbody>
         </Table>
+        <div>
+          <p>* Goods once sold cannot be exchanged or returned</p>
+        </div>
       </div>
     </div>
   );

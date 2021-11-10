@@ -8,6 +8,7 @@ const GSTtable = (props) => {
   let GrossTotal = 0;
   let Saletax = 0;
   let GST = 0;
+  let qunatityTotal = 0;
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
@@ -48,6 +49,7 @@ const GSTtable = (props) => {
               NetTotal += item.rate * item.quantity;
               GrossTotal +=
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
+              qunatityTotal = Number(item.quantity) + Number(item.quantity);
               Saletax =
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
               GST += item.rate * item.quantity * 0.17;
@@ -77,22 +79,22 @@ const GSTtable = (props) => {
               <td></td>
             </tr>
             <tr>
+              <td>Total</td>
+              <td>{qunatityTotal}</td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <th>Net Total</th>
               <td>{NetTotal}</td>
+              <td>{GST.toFixed(2)}</td>
+              <td>{GrossTotal}</td>
             </tr>
-            <tr>
+            {/* <tr>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <th>GST 17%</th>
-              <td>{GST.toFixed(2)}</td>
+              <td></td>
             </tr>
             <tr></tr>
             <tr>
@@ -101,10 +103,10 @@ const GSTtable = (props) => {
               <td></td>
               <td></td>
               <td></td>
-              <th>Gross Total</th>
+              <th>Bill Amount</th>
               <td>{GrossTotal}</td>
-            </tr>
-            {remainingBalance ? (
+            </tr> */}
+            {remainingBalanceAmount ? (
               <>
                 <tr>
                   <td></td>
@@ -112,7 +114,7 @@ const GSTtable = (props) => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <th>{remainingBalance} </th>
+                  <th>Previous Balance </th>
                   <th>{remainingBalanceAmount} </th>
                 </tr>
                 <tr>
@@ -121,7 +123,7 @@ const GSTtable = (props) => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <th>Current Balance </th>
+                  <th>Total Balance</th>
                   <th>{Number(GrossTotal) + Number(remainingBalanceAmount)}</th>
                 </tr>
               </>
