@@ -49,7 +49,7 @@ const GSTtable = (props) => {
               NetTotal += item.rate * item.quantity;
               GrossTotal +=
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
-              qunatityTotal = Number(item.quantity) + Number(item.quantity);
+              qunatityTotal += Number(item.quantity);
               Saletax =
                 item.rate * item.quantity + item.rate * item.quantity * 0.17;
               GST += item.rate * item.quantity * 0.17;

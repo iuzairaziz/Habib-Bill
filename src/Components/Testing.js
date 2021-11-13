@@ -45,7 +45,7 @@ const Challan = (props) => {
           </thead>
           <tbody>
             {data.map((item, index) => {
-              console.log("dttaa", data);
+              // console.log("dttaa", data);
               GrossTotal += item.rate * item.quantity;
               return (
                 <tr>
