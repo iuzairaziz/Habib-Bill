@@ -12,6 +12,7 @@ const GSTtable = (props) => {
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
+  const customer = props.customer;
   const AddST = props.saletax;
   const startDate = moment(props.startDate).format("DD/MMM/YYYY");
   const remainingBalance = props.remainingBalance;
@@ -27,7 +28,7 @@ const GSTtable = (props) => {
       <div className="container">
         <div className="row subhead">
           <h6>Date: {startDate}</h6>
-          <h5>Cutomer Name: {name} </h5>
+          <h5>Cutomer Name: {customer} </h5>
         </div>
         <div className="row remarks">
           <p>{remarks}</p>
@@ -56,7 +57,7 @@ const GSTtable = (props) => {
 
               return (
                 <tr>
-                  <td className="widthh">{item.items}</td>
+                  <td className="widthh">{item.product}</td>
                   <td>{item.quantity}</td>
                   <td>{item.unit}</td>
                   <td>{item.rate}</td>

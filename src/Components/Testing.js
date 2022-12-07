@@ -9,6 +9,7 @@ const Challan = (props) => {
   const data = props.data;
   const remarks = props.remarks;
   const name = props.name;
+  const customer = props.customer;
   const startDate = moment(props.startDate).format("DD-MMM-YYYY");
   const remainingBalance = props.remainingBalance;
   // const totalBalance = props.totalBalance;
@@ -26,7 +27,7 @@ const Challan = (props) => {
           <h6>Date: {startDate}</h6>
         </div>
         <div className="row">
-          <h5>M/S: {name}</h5>
+          <h5>M/S: {customer}</h5>
         </div>
 
         <div className="row">
@@ -51,7 +52,7 @@ const Challan = (props) => {
                 <tr>
                   <td>{item.quantity}</td>
                   <td>{item.unit}</td>
-                  <td>{item.items}</td>
+                  <td>{item.product}</td>
                   <td>{item.rate}</td>
                   <td>{item.rate * item.quantity}</td>
                 </tr>

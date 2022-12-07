@@ -10,6 +10,7 @@ const Bill = (props) => {
       data={options.data}
       remarks={options.remarks}
       name={options.name}
+      customer={options.customer}
       startDate={options.startDate}
       remainingBalance={options.remainingBalance}
       // totalBalance={options.totalBalance}
