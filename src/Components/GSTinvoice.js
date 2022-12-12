@@ -73,12 +73,6 @@ const GSTinvoice = (props) => {
           <Link to="/">
             <Button>Invoice</Button>
           </Link>
-//           <Link to="/add-customer">
-//             <Button>Add Customer</Button>
-//           </Link>
-//           <Link to="/add-product">
-//             <Button>Add Products</Button>
-//           </Link>
         </div>
       </div>
       <div className="row">
