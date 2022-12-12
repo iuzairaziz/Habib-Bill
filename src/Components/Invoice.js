@@ -101,86 +101,86 @@ const Invoice = (props) => {
                       setCustomer(e.target.value);
                     }}
                   >
-                    <option>PIONEER</option>
-                    <option>FINE</option>
-                    <option>ZAFAR IQBAL </option>
-                    <option>TAJ </option>
-                    <option>NASEER</option>
-                    <option>MODEL</option>
-                    <option>QASWA</option>
-                    <option>BHATTI </option>
-                    <option>JAGHNGIR </option>
-                    <option>AHMAD STRAW</option>
-                    <option>HIRA</option>
-                    <option>HASHMI</option>
-                    <option>PAPYRUS </option>
-                    <option>UMAR </option>
-                    <option>AA</option>
-                    <option>PRIME</option>
-                    <option>SUPREME</option>
-                    <option>FATIMA </option>
-                    <option>INDUS COATING </option>
-                    <option>AK</option>
-                    <option>AL - REHMAN</option>
-                    <option>MM</option>
-                    <option>SK</option>
-                    <option>FLYING</option>
-                    <option>GOHAR</option>
-                    <option>FAISLABAD</option>
-                    <option>PREMIER</option>
-                    <option>HH</option>
-                    <option>CENTURY</option>
-                    <option>QAUMI</option>
-                    <option>KING</option>
-                    <option>NOSHNI</option>
-                    <option>GOLD</option>
-                    <option>AL - AZIZ</option>
-                    <option>MALIK PACKAGES</option>
-                    <option>HUSNAIN</option>
-                    <option>ATAS</option>
-                    <option>IRSHAD NAEEM</option>
-                    <option>AL MEEZAN</option>
-                    <option>ILYAS QADRI</option>
-                    <option>AL-KARAM</option>
-                    <option>SHEIKH BILAL</option>
-                    <option>KHIALI</option>
-                    <option>ABDUL WAHAB</option>
-                    <option>MISK</option>
-                    <option>CH. SHABAAN</option>
-                    <option>CHENAB BOARD</option>
-                    <option>SALEEM SB.</option>
-                    <option>FAZAL BOARD</option>
-                    <option>RASHID GUJJAR</option>
-                    <option>ADAM PAPER & BOARD</option>
-                    <option>NEELAM PAPER & BOARD</option>
-                    <option>RIZWAN SB.</option>
-                    <option>CHAMAN TEXTILE</option>
-                    <option>ZAMAN PACKAGES</option>
-                    <option>REHMAN PLASTIC</option>
-                    <option>SUBHAN BOARD</option>
-                    <option>HAIDER ALI</option>
-                    <option>SAADIQ PAPER</option>
-                    <option>LATEEF PAPER & BOARD</option>
-                    <option>KERTAS PAPER & BOARD MILLS</option>
-                    <option>PAK PUNJAB PAPER & BOARD MILLS</option>
-                    <option>PAK</option>
-                    <option>JAHANGIR PAPER & BOARD MILLS</option>
-                    <option>SUPREME PAPER & BOARD MILLS</option>
-                    <option>NASEER PAPER & BOARD MILLS</option>
-                    <option>STAR PAPER & BOARD MILLS</option>
-                    <option>PUNJAB PAPER & BOARD MILLS</option>
-                    <option>QASWA PAPER & BOARD MILLS</option>
-                    <option>PAPYRUS PAPER & BOARD MILLS</option>
-                    <option>MODEL PAPER & BOARD MILLS</option>
-                    <option>MM PAPER & BOARD MILLS</option>
-                    <option>PIONEER PAPER & BOARD MILLS</option>
-                    <option>MANDI BHAODIN PAPER & BOARD MILLS</option>
-                    <option>MANDI </option>
-                    <option>FINE PAPER & BOARD MILLS</option>
-                    <option>GOHAR PAPER & BOARD MILLS</option>
-                    <option>BABBAR GATTA FACTORY </option>
-                    <option>FAISLABAD PAPER & BOARD MILLS</option>
-                    <option>AL-AZIZ PAPER & BOARD MILLS</option>
+                   <option>AA</option>
+<option>ABDUL WAHAB</option>
+<option>ADAM PAPER & BOARD</option>
+<option>AHMAD STRAW</option>
+<option>AK</option>
+<option>AL - AZIZ</option>
+<option>AL - REHMAN</option>
+<option>AL MEEZAN</option>
+<option>AL-AZIZ PAPER & BOARD MILLS</option>
+<option>AL-KARAM</option>
+<option>ATAS</option>
+<option>BABBAR GATTA FACTORY </option>
+<option>BHATTI </option>
+<option>CENTURY</option>
+<option>CH. SHABAAN</option>
+<option>CHAMAN TEXTILE</option>
+<option>CHENAB BOARD</option>
+<option>FAISLABAD PAPER & BOARD MILLS</option>
+<option>FAISLABAD</option>
+<option>FATIMA </option>
+<option>FAZAL BOARD</option>
+<option>FINE PAPER & BOARD MILLS</option>
+<option>FINE</option>
+<option>FLYING</option>
+<option>GOHAR PAPER & BOARD MILLS</option>
+<option>GOHAR</option>
+<option>GOLD</option>
+<option>HAIDER ALI</option>
+<option>HASHMI</option>
+<option>HH</option>
+<option>HIRA</option>
+<option>HUSNAIN</option>
+<option>ILYAS QADRI</option>
+<option>INDUS COATING </option>
+<option>IRSHAD NAEEM</option>
+<option>JAGHNGIR </option>
+<option>JAHANGIR PAPER & BOARD MILLS</option>
+<option>KERTAS PAPER & BOARD MILLS</option>
+<option>KHIALI</option>
+<option>KING</option>
+<option>LATEEF PAPER & BOARD</option>
+<option>MALIK PACKAGES</option>
+<option>MANDI </option>
+<option>MANDI BHAODIN PAPER & BOARD MILLS</option>
+<option>MISK</option>
+<option>MM PAPER & BOARD MILLS</option>
+<option>MM</option>
+<option>MODEL PAPER & BOARD MILLS</option>
+<option>MODEL</option>
+<option>NASEER PAPER & BOARD MILLS</option>
+<option>NASEER</option>
+<option>NEELAM PAPER & BOARD</option>
+<option>NOSHNI</option>
+<option>PAK PUNJAB PAPER & BOARD MILLS</option>
+<option>PAK</option>
+<option>PAPYRUS </option>
+<option>PAPYRUS PAPER & BOARD MILLS</option>
+<option>PIONEER PAPER & BOARD MILLS</option>
+<option>PIONEER</option>
+<option>PREMIER</option>
+<option>PRIME</option>
+<option>PUNJAB PAPER & BOARD MILLS</option>
+<option>QASWA PAPER & BOARD MILLS</option>
+<option>QASWA</option>
+<option>QAUMI</option>
+<option>RASHID GUJJAR</option>
+<option>REHMAN PLASTIC</option>
+<option>RIZWAN SB.</option>
+<option>SAADIQ PAPER</option>
+<option>SALEEM SB.</option>
+<option>SHEIKH BILAL</option>
+<option>SK</option>
+<option>STAR PAPER & BOARD MILLS</option>
+<option>SUBHAN BOARD</option>
+<option>SUPREME PAPER & BOARD MILLS</option>
+<option>SUPREME</option>
+<option>TAJ </option>
+<option>UMAR </option>
+<option>ZAFAR IQBAL </option>
+<option>ZAMAN PACKAGES</option>
                   </select>
                 </Col>
               </Col>
@@ -224,45 +224,45 @@ const Invoice = (props) => {
                       setProduct(e.target.value);
                     }}
                   >
-                       <option>Aurmine o</option>
-                    <option>Yellow LMQ</option>
-                    <option>Direct Red </option>
-                    <option>Direct Black </option>
-                    <option>bismark Brown</option>
-                    <option>Sky Blue SB</option>
-                    <option>Violet Liquid</option>
-                    <option>Methyl Violet (Crystal) </option>
-                    <option>Acid Orange </option>
-                    <option>Direct Scarlet 4BS</option>
-                    <option>Rhodamine B Extra</option>
-                    <option>Yellow Liquid</option>
-                    <option>Gum Rosin </option>
-                    <option>Orange RSN </option>
-                    <option>Green Liquid</option>
-                    <option>PAK Punjab</option>
-                    <option>ORANGE</option>
-                    <option>Black Liquid </option>
-                    <option>Bleaching </option>
-                    <option>GaurGum</option>
-                    <option>Direct Red 12B </option>
-                    <option>Malachite Green (Crystal)</option>
-                    <option>Red XGRL </option>
-                    <option>Red 3R</option>
-                    <option>GREEN </option>
-                    <option>Methylene Blue</option>
-                    <option>LEECO </option>
-                    <option>YELLOW CRUDE</option>
-                    <option>CAUSTIC SODA </option>
-                    <option>Nigrosine Black</option>
-                    <option>Turqouise Blue </option>
-                    <option>DELIVERY CHARGES</option>
-                    <option>Direct Orange </option>
-                    <option>FORMIC ACID</option>
-                    <option>Yellow </option>
-                    <option>BLUE</option>
-                    <option>VIOLET </option>
-                    <option>YELLOW XTR</option>
-                    <option>GOLDEN XGRL </option>
+                      <option>Acid Orange </option>
+<option>Aurmine o</option>
+<option>BLUE</option>
+<option>Black Liquid </option>
+<option>Bleaching </option>
+<option>CAUSTIC SODA </option>
+<option>DELIVERY CHARGES</option>
+<option>Direct Black </option>
+<option>Direct Orange </option>
+<option>Direct Red 12B </option>
+<option>Direct Red </option>
+<option>Direct Scarlet 4BS</option>
+<option>FORMIC ACID</option>
+<option>GOLDEN XGRL </option>
+<option>GREEN </option>
+<option>GaurGum</option>
+<option>Green Liquid</option>
+<option>Gum Rosin </option>
+<option>LEECO </option>
+<option>Malachite Green (Crystal)</option>
+<option>Methyl Violet (Crystal) </option>
+<option>Methylene Blue</option>
+<option>Nigrosine Black</option>
+<option>ORANGE</option>
+<option>Orange RSN </option>
+<option>PAK Punjab</option>
+<option>Red 3R</option>
+<option>Red XGRL </option>
+<option>Rhodamine B Extra</option>
+<option>Sky Blue SB</option>
+<option>Turqouise Blue </option>
+<option>VIOLET </option>
+<option>Violet Liquid</option>
+<option>YELLOW CRUDE</option>
+<option>YELLOW XTR</option>
+<option>Yellow </option>
+<option>Yellow LMQ</option>
+<option>Yellow Liquid</option>
+<option>bismark Brown</option>
                   </select>
                 </Col>
               </Col>
