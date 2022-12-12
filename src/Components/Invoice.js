@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+  import React, { useState, useRef, useEffect } from "react";
 import {
   FormGroup,
   Form,
@@ -74,12 +74,12 @@ const Invoice = (props) => {
           <Link to="/gst">
             <Button>GST Invoice</Button>
           </Link>
-          <Link to="/add-customer">
-            <Button>Add Customer</Button>
-          </Link>
-          <Link to="/add-product">
-            <Button>Add Products</Button>
-          </Link>
+//           <Link to="/add-customer">
+//             <Button>Add Customer</Button>
+//           </Link>
+//           <Link to="/add-product">
+//             <Button>Add Products</Button>
+//           </Link>
         </div>
       </div>
       <div className="row heading">
