@@ -49,11 +49,11 @@ const GSTtable = (props) => {
             {data.map((item, index) => {
               NetTotal += item.rate * item.quantity;
               GrossTotal +=
-                item.rate * item.quantity + item.rate * item.quantity * 0.17;
+                item.rate * item.quantity + item.rate * item.quantity * 0.18;
               qunatityTotal += Number(item.quantity);
               Saletax =
-                item.rate * item.quantity + item.rate * item.quantity * 0.17;
-              GST += item.rate * item.quantity * 0.17;
+                item.rate * item.quantity + item.rate * item.quantity * 0.18;
+              GST += item.rate * item.quantity * 0.18;
 
               return (
                 <tr>
@@ -62,10 +62,10 @@ const GSTtable = (props) => {
                   <td>{item.unit}</td>
                   <td>{item.rate}</td>
                   <td>{item.rate * item.quantity}</td>
-                  <td>{(item.rate * item.quantity * 0.17).toFixed(2)}</td>
+                  <td>{(item.rate * item.quantity * 0.18).toFixed(2)}</td>
                   <td>
                     {item.rate * item.quantity +
-                      item.rate * item.quantity * 0.17}
+                      item.rate * item.quantity * 0.18}
                   </td>
                 </tr>
               );
@@ -94,7 +94,7 @@ const GSTtable = (props) => {
               <td></td>
               <td></td>
               <td></td>
-              <th>GST 17%</th>
+              <th>GST 18%</th>
               <td></td>
             </tr>
             <tr></tr>
